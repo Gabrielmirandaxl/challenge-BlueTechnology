@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -23,6 +24,11 @@ public class UserController {
     public ResponseEntity<Object> create(@RequestBody UserModel userModel){
         userModel.setRegistrionDate(LocalDateTime.now(ZoneId.of("UTC")));
         return ResponseEntity.status(201).body(userService.createUser(userModel));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<UserModel>> read(){
+        return ResponseEntity.status(200).body(userService.readUser());
     }
 
 }
