@@ -32,16 +32,19 @@ public class UserService implements IUserService {
 
         return this.userRepository.save(userModel);
     }
+
     @Override
     public List<UserModel> readUser(){
         return this.userRepository.findAll();
     }
+
     @Override
     public UserModel findUser(Long id){
         Optional<UserModel> usuario = this.userRepository.findById(id);
 
         return usuario.orElseThrow( () -> new ExceptionBadRequest("Nenhum usuário encontrado"));
     }
+
     @Override
     public UserModel updateUser(Long id, UserModel userModel){
         UserModel user = this.findUser(id);
