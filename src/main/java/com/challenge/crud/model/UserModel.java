@@ -19,6 +19,9 @@ public class UserModel {
     @Column(nullable = false, length = 15)
     private String phone;
 
+    public UserModel(){
+
+    }
     public UserModel(Long id, String name, String email, String phone){
         this.id = id;
         this.name = name;

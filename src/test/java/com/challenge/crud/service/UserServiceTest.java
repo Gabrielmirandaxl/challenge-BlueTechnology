@@ -15,6 +15,7 @@ import java.util.Optional;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 @ExtendWith(MockitoExtension.class)
@@ -64,6 +65,14 @@ class UserServiceTest {
         assertEquals("(81) 98434-2637", result.get(0).getPhone());
         assertEquals("(81) 98764-2343", result.get(1).getPhone());
 
+    }
+
+    @Test
+    @DisplayName("User not found")
+    void ErroNotFound(){
+
+        when(userRepository.findById(10000L));
+        assertThrows(RuntimeException.class, () -> this.userService.findUser(10000L));
     }
 
     @Test
