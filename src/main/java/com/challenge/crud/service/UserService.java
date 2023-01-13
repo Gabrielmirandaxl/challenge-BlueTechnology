@@ -1,5 +1,7 @@
 package com.challenge.crud.service;
 
+import com.challenge.crud.exceptions.ExceptionBadRequest;
+import com.challenge.crud.libs.ValidacaoUser;
 import com.challenge.crud.model.UserModel;
 import com.challenge.crud.repository.UserRepository;
 
@@ -19,6 +21,15 @@ public class UserService implements IUserService {
 
     @Override
     public UserModel createUser(UserModel userModel){
+        ValidacaoUser.validation(userModel);
+
+        Boolean existsEmail = this.userRepository.existsByEmail(userModel.getEmail());
+        Boolean existsPhone = this.userRepository.existsByPhone(userModel.getPhone());
+
+        if(existsEmail) throw new ExceptionBadRequest("Email já cadastrado");
+        if(existsPhone) throw new ExceptionBadRequest("Telefone já cadastrado");
+
+
         return this.userRepository.save(userModel);
     }
     @Override
@@ -28,7 +39,7 @@ public class UserService implements IUserService {
     @Override
     public UserModel findUser(Long id){
         Optional<UserModel> usuario = this.userRepository.findById(id);
-        return usuario.orElseThrow( ()-> new RuntimeException("teste"));
+        return usuario.orElseThrow( () -> new ExceptionBadRequest("Nenhum usuário encontrado"));
     }
     @Override
     public UserModel updateUser(Long id, UserModel userModel){
@@ -36,7 +47,7 @@ public class UserService implements IUserService {
         user.setName(userModel.getName());
         user.setEmail(userModel.getEmail());
         user.setPhone(userModel.getPhone());
-        return this.userRepository.save(userModel);
+        return this.userRepository.save(user);
     }
 
     @Override
