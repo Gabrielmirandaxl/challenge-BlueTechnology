@@ -24,12 +24,12 @@ public class UserController {
     @PostMapping
     public ResponseEntity<Object> create(@RequestBody UserModel userModel){
         userModel.setRegistrionDate(LocalDateTime.now(ZoneId.of("UTC")));
-        return ResponseEntity.status(201).body(userService.createUser(userModel));
+        return ResponseEntity.status(201).body(this.userService.createUser(userModel));
     }
 
     @GetMapping
     public ResponseEntity<List<UserModel>> read(){
-        return ResponseEntity.status(200).body(userService.readUser());
+        return ResponseEntity.status(200).body(this.userService.readUser());
     }
 
     @PutMapping("/{id}")
@@ -47,5 +47,18 @@ public class UserController {
         return ResponseEntity.status(200).body(this.userService.createUser(updateUser));
 
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object> delete(@PathVariable(value = "id") Long id){
+        Optional<UserModel> optionalUserModel = this.userService.findUser(id);
+
+        if(!optionalUserModel.isPresent()){
+            return ResponseEntity.status(404).body("Nenhum usuário encontrado");
+        }
+        this.userService.deleteUser(id);
+        return ResponseEntity.status(200).body("Usuário deletado");
+
+    }
+
 
 }
