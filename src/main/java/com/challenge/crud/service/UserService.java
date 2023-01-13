@@ -26,13 +26,25 @@ public class UserService {
         return this.userRepository.findAll();
     }
 
-    public Optional<UserModel> findUser(Long id){
-        return this.userRepository.findById(id);
+    public UserModel findUser(Long id){
+        Optional<UserModel> usuario = this.userRepository.findById(id);
+        return usuario.orElseThrow( ()-> new RuntimeException("teste"));
     }
 
-    @Transactional
+    public UserModel updateUser(Long id, UserModel userModel){
+        UserModel user = this.findUser(id);
+        user.setName(userModel.getName());
+        user.setEmail(userModel.getEmail());
+        user.setPhone(userModel.getPhone());
+
+        return this.userRepository.save(userModel);
+    }
+
+
     public void deleteUser(Long id){
-        this.userRepository.deleteById(id);
+        boolean exists = this.userRepository.existsById(id);
+
+        if(exists) this.userRepository.deleteById(id);
     }
 
 

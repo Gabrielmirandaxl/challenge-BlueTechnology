@@ -13,48 +13,41 @@ import java.util.Optional;
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/user")
-public class UserController {
+public class UserController implements IUserController {
 
     final UserService userService;
 
     public UserController(UserService userService){
         this.userService = userService;
     }
-
+    @Override
     @PostMapping
-    public ResponseEntity<Object> create(@RequestBody UserModel userModel){
+    public ResponseEntity<UserModel> create(@RequestBody UserModel userModel){
         userModel.setRegistrionDate(LocalDateTime.now(ZoneId.of("UTC")));
         return ResponseEntity.status(201).body(this.userService.createUser(userModel));
     }
-
+    @Override
     @GetMapping
     public ResponseEntity<List<UserModel>> read(){
         return ResponseEntity.status(200).body(this.userService.readUser());
     }
-
+    @Override
+    @GetMapping("/{id}")
+    public ResponseEntity<UserModel> findOneUser(@PathVariable Long id){
+        UserModel user = this.userService.findUser(id);
+        return ResponseEntity.status(200).body(user);
+    }
+    @Override
     @PutMapping("/{id}")
-    public ResponseEntity<Object> update(@PathVariable(value = "id") Long id, @RequestBody UserModel userModel){
-        Optional<UserModel> optionalUserModel = this.userService.findUser(id);
-        if(!optionalUserModel.isPresent()){
-            return ResponseEntity.status(404).body("Nenhum usuário encontrado");
-        }
+    public ResponseEntity<UserModel> update(@RequestBody UserModel userModel, @PathVariable Long id){
 
-        var updateUser = optionalUserModel.get();
-        updateUser.setName(userModel.getName());
-        updateUser.setEmail(userModel.getEmail());
-        updateUser.setPhone(userModel.getPhone());
-
-        return ResponseEntity.status(200).body(this.userService.createUser(updateUser));
+        return ResponseEntity.status(200).body(this.userService.updateUser(id, userModel));
 
     }
-
+    @Override
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> delete(@PathVariable(value = "id") Long id){
-        Optional<UserModel> optionalUserModel = this.userService.findUser(id);
+    public ResponseEntity<String> delete(@PathVariable Long id){
 
-        if(!optionalUserModel.isPresent()){
-            return ResponseEntity.status(404).body("Nenhum usuário encontrado");
-        }
         this.userService.deleteUser(id);
         return ResponseEntity.status(200).body("Usuário deletado");
 
