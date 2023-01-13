@@ -34,8 +34,7 @@ public class UserController implements IUserController {
     @Override
     @GetMapping("/{id}")
     public ResponseEntity<UserModel> findOneUser(@PathVariable Long id){
-        UserModel user = this.userService.findUser(id);
-        return ResponseEntity.status(200).body(user);
+        return ResponseEntity.status(200).body(this.userService.findUser(id));
     }
 
     @Override
