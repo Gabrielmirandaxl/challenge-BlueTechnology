@@ -27,8 +27,8 @@ public class UserService implements IUserService {
         Boolean existsPhone = this.userRepository.existsByPhone(userModel.getPhone());
 
         if(existsEmail) throw new ExceptionBadRequest("Email já cadastrado");
-        if(existsPhone) throw new ExceptionBadRequest("Telefone já cadastrado");
 
+        if(existsPhone) throw new ExceptionBadRequest("Telefone já cadastrado");
 
         return this.userRepository.save(userModel);
     }
@@ -39,6 +39,7 @@ public class UserService implements IUserService {
     @Override
     public UserModel findUser(Long id){
         Optional<UserModel> usuario = this.userRepository.findById(id);
+
         return usuario.orElseThrow( () -> new ExceptionBadRequest("Nenhum usuário encontrado"));
     }
     @Override
@@ -47,6 +48,7 @@ public class UserService implements IUserService {
         user.setName(userModel.getName());
         user.setEmail(userModel.getEmail());
         user.setPhone(userModel.getPhone());
+
         return this.userRepository.save(user);
     }
 
