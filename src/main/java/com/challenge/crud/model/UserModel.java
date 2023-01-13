@@ -14,12 +14,10 @@ public class UserModel {
     private Long id;
     @Column(nullable = false)
     private String name;
-    @Column(nullable = false, unique = true)
-    private String email;
-    @Column(nullable = false, unique = true, length = 15)
-    private String phone;
     @Column(nullable = false)
-    private LocalDateTime registrionDate;
+    private String email;
+    @Column(nullable = false, length = 15)
+    private String phone;
 
     public Long getId() {
         return id;
@@ -53,11 +51,5 @@ public class UserModel {
         this.phone = phone;
     }
 
-    public LocalDateTime getRegistrionDate() {
-        return registrionDate;
-    }
 
-    public void setRegistrionDate(LocalDateTime registrionDate) {
-        this.registrionDate = registrionDate;
-    }
 }

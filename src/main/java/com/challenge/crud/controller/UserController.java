@@ -23,7 +23,7 @@ public class UserController implements IUserController {
     @Override
     @PostMapping
     public ResponseEntity<UserModel> create(@RequestBody UserModel userModel){
-        userModel.setRegistrionDate(LocalDateTime.now(ZoneId.of("UTC")));
+
         return ResponseEntity.status(201).body(this.userService.createUser(userModel));
     }
     @Override
