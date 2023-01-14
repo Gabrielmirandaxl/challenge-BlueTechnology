@@ -14,10 +14,21 @@ public class UserModel {
     private Long id;
     @Column(nullable = false)
     private String name;
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
     @Column(nullable = false)
     private String email;
     @Column(nullable = false, length = 15)
     private String phone;
+    @Column(nullable = false, length = 14)
+    private String cpf;
 
     public UserModel(){
 
