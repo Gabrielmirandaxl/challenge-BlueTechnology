@@ -58,6 +58,16 @@ CRUD feito com `vuejs` e `java` utilizando o framework `spring boot` para a vaga
 | :---------- | :--------- | :------------------------------------------ |
 | `id`      | `Long` | **Obrigatório**. O ID do usuário que você quer |
 
+## Funcionalidades
+
+- Validações nos campos
+- Testes unitários
+- Criar usuário
+- Buscar um usuário
+- Buscar todos os usuário
+- Atualizar um usuário
+- Excluir um usuário
+
 
 ## 📥 download
 
