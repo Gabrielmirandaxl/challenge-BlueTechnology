@@ -47,12 +47,7 @@ public class UserService implements IUserService {
 
     @Override
     public UserModel updateUser(Long id, UserModel userModel){
-
-        Boolean existsEmail = this.userRepository.existsByEmail(userModel.getEmail());
-        Boolean existsPhone = this.userRepository.existsByPhone(userModel.getPhone());
-
-        if(existsEmail) throw new ExceptionBadRequest("Email já cadastrado");
-        if(existsPhone) throw new ExceptionBadRequest("Telefone já cadastrado");
+        ValidacaoUser.validation(userModel);
 
         UserModel user = this.findUser(id);
         user.setName(userModel.getName());
