@@ -12,6 +12,7 @@ public class ValidacaoUser {
       if(!ValidationEmail.validationEmail(userModel.getEmail())) throw new ExceptionBadRequest("Email inválido");
       if(userModel.getPhone() == null) throw new ExceptionBadRequest("O telefone não pode ser nulo");
       if(userModel.getPhone().isEmpty()) throw new ExceptionBadRequest("Preencha o campo telefone");
+      if(userModel.getPhone().length() < 14) throw new ExceptionBadRequest("Preencha o campo telefone corretamente");
 
     }
 

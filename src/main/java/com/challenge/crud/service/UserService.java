@@ -47,6 +47,7 @@ public class UserService implements IUserService {
 
     @Override
     public UserModel updateUser(Long id, UserModel userModel){
+        
         UserModel user = this.findUser(id);
         user.setName(userModel.getName());
         user.setEmail(userModel.getEmail());
