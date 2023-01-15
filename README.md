@@ -2,7 +2,7 @@
 
 # Challenge - Back End - BlueTechnology
 
-CRUD feito com `vuejs` e `java` utilizando o framework `spring boot` para a vaga de estágio na empresa BlueTechnology.
+CRUD feito com `java` utilizando o framework `spring boot` para a vaga de estágio na empresa BlueTechnology.
 
 ## Documentação da API
 
@@ -140,14 +140,8 @@ As seguintes ferramentas/tecnologias foram usadas na construção e teste do pro
 <div align=left>
 
 <br>
- 
-## 📝 license
 
-Este repositório está licenciado sob **MIT LICENSE**. Para informações mais detalhadas, leia o arquivo [LICENSE](./LICENSE) contido neste repositório.
-                
- <br> 
 	
- [<Back](#-blue-schedule-frontend-)
-
+ [<Back](#olá-tudo-bem-me-chamo-gabriel-e-seja-bem-vindo-)
 
 
