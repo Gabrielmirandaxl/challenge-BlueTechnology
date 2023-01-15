@@ -115,6 +115,39 @@ As seguintes ferramentas/tecnologias foram usadas na construção e teste do pro
 | <a href="https://vuejs.org/"><img align="center" alt="vue" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/spring/spring-original-wordmark.svg"></a>| Spring boot  |  `3.0.1`       |
 | <a href="https://www.javascript.com/" target="_blank"><img align="center" alt="js" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original-wordmark.svg"></a> | Mysql |  `8.0.29`      |
 | <a href="https://www.postgresql.org/download/" target="_blank"><img align="center" alt="node" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/docker/docker-original-wordmark.svg"></a> | Docker      |  `16.14.2`       |
-|
+
+
+              
+## ✍🏼 autor
+
+
+<div align=left>
+
+- <table>
+ <p>  Developed by:</p>
+  <tr align=center>
+    <th><strong> Gabriel Miranda </strong></th>
+  </tr>
+   <td>
+      <a href="https://github.com/Gabrielmirandaxl">
+        <img width="168" height="140" src="https://user-images.githubusercontent.com/82064724/179410818-bc9e953b-83b1-4f23-9d05-ad702abf0f29.png" > <p align="left">
+</p></a>
+    </td>
+
+</table>
+</div>
+
+<div align=left>
+
+<br>
+ 
+## 📝 license
+
+Este repositório está licenciado sob **MIT LICENSE**. Para informações mais detalhadas, leia o arquivo [LICENSE](./LICENSE) contido neste repositório.
+                
+ <br> 
+	
+ [<Back](#-blue-schedule-frontend-)
+
 
 
