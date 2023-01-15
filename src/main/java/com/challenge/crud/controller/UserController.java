@@ -32,10 +32,17 @@ public class UserController implements IUserController {
     }
 
     @Override
+    @GetMapping("/pesq")
+    public ResponseEntity<List<UserModel>> findEmailUser(@RequestParam("email") String email){
+        return ResponseEntity.status(200).body(this.userService.findByEmail(email));
+    }
+
+    @Override
     @GetMapping("/{id}")
     public ResponseEntity<UserModel> findOneUser(@PathVariable Long id){
         return ResponseEntity.status(200).body(this.userService.findUser(id));
     }
+
 
     @Override
     @PutMapping("/{id}")

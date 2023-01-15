@@ -41,6 +41,10 @@ public class UserService implements IUserService {
         return this.userRepository.findAll();
     }
 
+    public List<UserModel> findByEmail(String email){
+        return this.userRepository.findByEmail(email);
+    }
+
     @Override
     public UserModel findUser(Long id){
         Optional<UserModel> usuario = this.userRepository.findById(id);
