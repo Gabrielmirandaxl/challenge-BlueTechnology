@@ -25,6 +25,9 @@ public class UserService implements IUserService {
 
         Boolean existsEmail = this.userRepository.existsByEmail(userModel.getEmail());
         Boolean existsPhone = this.userRepository.existsByPhone(userModel.getPhone());
+        Boolean existsCpf = this.userRepository.existsByCpf(userModel.getPhone());
+
+        if(existsCpf) throw new ExceptionBadRequest("Cpf já cadastrado");
 
         if(existsEmail) throw new ExceptionBadRequest("Email já cadastrado");
 
@@ -53,6 +56,7 @@ public class UserService implements IUserService {
         user.setName(userModel.getName());
         user.setEmail(userModel.getEmail());
         user.setPhone(userModel.getPhone());
+        user.setCpf(userModel.getCpf());
 
         return this.userRepository.save(user);
     }
