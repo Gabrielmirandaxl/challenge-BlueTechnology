@@ -33,6 +33,7 @@ CRUD feito com `vuejs` e `java` utilizando o framework `spring boot` para a vaga
 | `name`      | `String` | **Obrigatório**. O nome do usuário |
 | `email`      | `String` | **Obrigatório**. O email do usuário |
 | `phone`      | `String` | **Obrigatório**. O telefone do usuário |
+| `cpf`      | `String` | **Obrigatório**. O cpf do usuário |
 
 #### Atualizar um usuário
 
@@ -46,6 +47,7 @@ CRUD feito com `vuejs` e `java` utilizando o framework `spring boot` para a vaga
 | `name`      | `String` | **Obrigatório**. O nome do usuário |
 | `email`      | `String` | **Obrigatório**. O email do usuário |
 | `phone`      | `String` | **Obrigatório**. O telefone do usuário |
+| `cpf`      | `String` | **Obrigatório**. O cpf do usuário |
 
 
 #### Excluir um usuário
