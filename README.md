@@ -94,7 +94,27 @@ $ git clone https://github.com/Gabrielmirandaxl/challenge-Bluetechnology
 
 # aplicação rodando em:
   - Local:   http://localhost:3000/ 
- 
 ```
+
+
+<br>
+
+## 🌐 aplicação
+<img width="900" heigth="900"  src="https://github.com/Gabrielmirandaxl/gif/blob/main/2023-01-14%2021-46-26.gif">
+
+<br>
+
+## 🛠 tecnologias
+
+As seguintes ferramentas/tecnologias foram usadas na construção e teste do projeto.
+<br>
+
+| logo               | Framework                  | Version      |
+| :----------------- | :------------------------- | :----------: |
+| <a href="https://vuejs.org/"><img align="center" alt="vue" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg"></a>| Html  |  `5.0.6`       |
+| <a href="https://vuejs.org/"><img align="center" alt="vue" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg"></a>| Css  |  `3.0.0`       |
+| <a href="https://www.javascript.com/" target="_blank"><img align="center" alt="js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg"></a> | JavaScript  |  `4.6.3`      |
+| <a href="https://www.postgresql.org/download/" target="_blank"><img align="center" alt="node" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/nodejs/nodejs-original.svg"></a> | NodeJS      |  `16.14.2`       |
+| <a href="https://materializecss.com/"><img align="center" alt="mongo" height="25" width="35" src="https://github.com/devicons/devicon/blob/master/icons/mongodb/mongodb-original.svg"></a> | mongoDB | `5.0.9` |
 
 
