@@ -2,6 +2,7 @@ package com.challenge.crud.service;
 
 import com.challenge.crud.exceptions.ExceptionBadRequest;
 import com.challenge.crud.libs.ValidacaoUser;
+import com.challenge.crud.libs.ValidationSearch;
 import com.challenge.crud.model.UserModel;
 import com.challenge.crud.repository.UserRepository;
 
@@ -42,6 +43,8 @@ public class UserService implements IUserService {
     }
 
     public List<UserModel> findByEmail(String email){
+        ValidationSearch.search(email);
+
         return this.userRepository.findByEmail(email);
     }
 
