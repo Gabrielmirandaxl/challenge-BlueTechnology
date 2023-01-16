@@ -21,6 +21,18 @@ CRUD feito com `java` utilizando o framework `spring boot` para a vaga de estág
 | :---------- | :--------- | :------------------------------------------ |
 | `id`      | `Long` | **Obrigatório**. O ID do usuário que você quer |
 
+
+#### Pesquisar usuário com o email
+
+```http
+  GET /user/pesq?email=${email}
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `email`      | `String` | **Obrigatório**. O email do usuário que você quer pesquisar |
+
+
 #### Cadastrar um usuário
 
 
@@ -113,8 +125,8 @@ As seguintes ferramentas/tecnologias foram usadas na construção e teste do pro
 | :----------------- | :------------------------- | :----------: |
 | <img align="center" alt="vue" height="30" width="40" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Java-Dark.svg">| Java  |  `18.0.0`       |
 | <img align="center" alt="vue" height="30" width="40" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Spring-Dark.svg">| Spring boot  |  `3.0.1`       |
-| <img align="center" alt="js" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original-wordmark.svg"> | Mysql |  `8.0.29`      |
-| <img align="center" alt="node" height="30" width="40" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Docker.svg"> | Docker      |  `16.14.2`       |
+| <img align="center" alt="js" height="30" width="40" src="https://github.com/tandpfun/skill-icons/blob/main/icons/MySQL-Dark.svg"> | Mysql |  `8.0.29`      |
+| <img align="center" alt="node" height="30" width="40" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Docker.svg"> | Docker      |  `20.10.21`       |
 
 
               
