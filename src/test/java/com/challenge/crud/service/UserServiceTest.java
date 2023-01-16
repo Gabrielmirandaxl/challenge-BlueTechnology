@@ -31,7 +31,7 @@ class UserServiceTest {
     @DisplayName("Create user")
     void createUser() {
 
-        UserModel user = new UserModel(1L, "thiago", "thiago@gmail.com", "(81) 98402-1703");
+        UserModel user = new UserModel(1L, "thiago", "thiago@gmail.com", "(81) 98402-1703", "313.241.424-00");
 
        when(userRepository.save(user)).thenReturn(user);
 
@@ -40,6 +40,7 @@ class UserServiceTest {
        assertEquals("thiago", result.getName());
        assertEquals("thiago@gmail.com", result.getEmail());
        assertEquals("(81) 98402-1703", result.getPhone());
+       assertEquals("313.241.424-00", result.getCpf());
 
     }
 
@@ -50,8 +51,8 @@ class UserServiceTest {
 
         when(userRepository.findAll()).thenReturn(
                 List.of(
-                        new UserModel(1L, "gabriel", "gabriel@gmail.com", "(81) 98434-2637"),
-                        new UserModel(2L, "pedro", "pedro@gmail.com", "(81) 98764-2343")
+                        new UserModel(1L, "gabriel", "gabriel@gmail.com", "(81) 98434-2637", "313.241.424-00"),
+                        new UserModel(2L, "pedro", "pedro@gmail.com", "(81) 98764-2343", "313.241.424-00")
                 )
         );
 
@@ -79,13 +80,14 @@ class UserServiceTest {
     @DisplayName("Get one user")
     void findUser() {
 
-      UserModel user = new UserModel(1L, "gabriel", "gabriel@gmail.com", "(81) 98402-1703");
+      UserModel user = new UserModel(1L, "gabriel", "gabriel@gmail.com", "(81) 98402-1703", "313.241.424-00");
 
       when(userRepository.findById(user.getId())).thenReturn(Optional.of(user));
 
       UserModel result = this.userService.findUser(user.getId());
 
       assertEquals("gabriel", result.getName());
+        assertEquals("gabriel@gmail.com", result.getEmail());
 
     }
 
@@ -93,7 +95,7 @@ class UserServiceTest {
     @DisplayName("Delete one user")
     void deleteUser() {
 
-        UserModel user = new UserModel(1L, "gabriel", "gabriel@gmail.com", "(81) 98402-1703");
+        UserModel user = new UserModel(1L, "gabriel", "gabriel@gmail.com", "(81) 98402-1703", "313.241.424-00");
 
         when(userRepository.existsById(1L)).thenReturn(true);
         this.userService.deleteUser(user.getId());
@@ -104,7 +106,7 @@ class UserServiceTest {
     @Test
     @DisplayName("Update one user")
     void updateUser() {
-        UserModel user = new UserModel(1L, "gabriel", "gabriel@gmail.com", "(81) 984021703");
+        UserModel user = new UserModel(1L, "gabriel", "gabriel@gmail.com", "(81) 984021703", "313.241.424-00");
 
         when(userRepository.findById(user.getId())).thenReturn(Optional.of(user));
         when(userRepository.save(user)).thenReturn(user);
@@ -112,6 +114,27 @@ class UserServiceTest {
         UserModel result = this.userService.updateUser(1l, user);
 
         assertEquals("gabriel", result.getName());
+        assertEquals("gabriel@gmail.com", result.getEmail());
+
+    }
+
+    @Test
+    void findByEmail() {
+        UserModel user = new UserModel(1L, "thiago", "thiago@gmail.com", "(81) 98402-1703", "313.241.424-00");
+
+        when(userRepository.findByEmail(user.getEmail())).thenReturn(
+                List.of(
+                        new UserModel(1L, "thiago", "thiago@gmail.com", "(81) 98402-1703", "313.241.424-00")
+                )
+        );
+
+        List<UserModel> result = this.userService.findByEmail(user.getEmail());
+
+        assertEquals(1, result.size());
+        assertEquals("thiago", result.get(0).getName());
+        assertEquals("thiago@gmail.com", result.get(0).getEmail());
+
+
 
     }
 }

@@ -33,11 +33,12 @@ public class UserModel {
     public UserModel(){
 
     }
-    public UserModel(Long id, String name, String email, String phone){
+    public UserModel(Long id, String name, String email, String phone, String cpf){
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.cpf = cpf;
     }
 
     public Long getId() {
