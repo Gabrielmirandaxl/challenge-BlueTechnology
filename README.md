@@ -1,4 +1,4 @@
-# Olá, tudo bem? Me chamo Gabriel e seja bem vindo! 👋
+# Olá, tudo bem? Me chamo Gabriel e seja bem vindo(a)! 👋
 
 # Challenge - Back End - BlueTechnology
 
