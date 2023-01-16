@@ -2,7 +2,10 @@
 
 # Challenge - Back End - BlueTechnology
 
-CRUD feito com `java` utilizando o framework `spring boot` para a vaga de estágio na empresa BlueTechnology.
+ Estou participando do processo seletivo da Blue Technology, e para melhor organização dividi o projeto em dois onde a aplicação do front end está em outro repositorio clique <a href="https://github.com/Gabrielmirandaxl/challenge-front-BlueTechnology">aqui</a> para visualizar o projeto.
+ 
+Venho por meio deste repositorio entregar a aplicação `back end`, CRUD feito com `java` utilizando o framework `spring boot`, `docker` e `mysql` . Espero que você goste!
+
 
 ## Documentação da API
 
@@ -76,11 +79,14 @@ CRUD feito com `java` utilizando o framework `spring boot` para a vaga de estág
 
 - Validações nos campos
 - Testes unitários
+- Tratamento de erro
 - Criar usuário
+- Pesquisar um usuário através do email
 - Buscar um usuário
 - Buscar todos os usuário
 - Atualizar um usuário
 - Excluir um usuário
+
 
 
 ## 📥 download
